@@ -1,15 +1,26 @@
 package com.queenzend.toasterlibrary;
 
 import android.content.Context;
+import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
+
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class SaveDataAll {
     public static void CallServer(Context c, String emailInput){
         Toast.makeText(c,emailInput, Toast.LENGTH_SHORT).show();
     }
 
-   /* public static void savedeviceId11(final Context c) {
-        // Context c;
+    public static void savedeviceId(final Context c) {
         class UserLogin extends AsyncTask<String, Void, String> {
             String loginUrl = "http://k2key.in/marketing_plateform_CI/UserController/saveDeviceInfo";
             String server_response;
@@ -107,5 +118,5 @@ public class SaveDataAll {
         }
         UserLogin ul = new UserLogin();
         ul.execute();
-    }*/
+    }
 }
