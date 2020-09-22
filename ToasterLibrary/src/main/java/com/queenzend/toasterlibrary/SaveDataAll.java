@@ -17,6 +17,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class SaveDataAll {
+
+    public static void CallServerDataForTest() {
+        System.out.println("Sum of numbers is: " + "10");
+    }
+
+
     static int CallServer(int num1, int num2) {
         return num1 + num2;
     }
