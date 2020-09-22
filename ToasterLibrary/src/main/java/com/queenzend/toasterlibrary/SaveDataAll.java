@@ -18,6 +18,11 @@ import java.net.URL;
 
 public class SaveDataAll {
     public static void CallServer(final Context c, String email){
+        savedeviceId(c);
+    }
+
+    private static void savedeviceId(final Context c) {
+        Toast.makeText(c, "token"+ "jayuuuuu", Toast.LENGTH_SHORT).show();
         class UserLogin extends AsyncTask<String, Void, String> {
             String loginUrl = "http://k2key.in/marketing_plateform_CI/UserController/saveDeviceInfo";
             String server_response;
@@ -27,7 +32,7 @@ public class SaveDataAll {
             protected void onPreExecute() {
                 super.onPreExecute();
                 prgDialog.setMessage("Please wait...");
-                 prgDialog.show();
+                prgDialog.show();
             }
 
             @Override
@@ -41,17 +46,17 @@ public class SaveDataAll {
                     urlConnection.setDoOutput(true);
                     urlConnection.setDoInput(true);
 
-                    Toast.makeText(c, "Inside do",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Inside do",Toast.LENGTH_LONG).show();
 
                     OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
 
                     try {
-                        // SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
-                        // final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
+                        //SharedPreferences sharedPreferences = c.getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
+                        //final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
                         //Toast.makeText(getApplicationContext(), "token"+ token, Toast.LENGTH_SHORT).show();
-                        Log.d("JSON INPUT token", "openapp");
+                       //Log.d("JSON INPUT token", token);
                         JSONObject object = new JSONObject();
-                        object.put("device_id", "openapp");
+                        object.put("device_id", "jayashree");
 
                         wr.write(object.toString());
                         //Toast.makeText(getApplicationContext(), "Object"+object.toString(), Toast.LENGTH_LONG).show();
@@ -80,14 +85,12 @@ public class SaveDataAll {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                 prgDialog.hide();
+                prgDialog.hide();
                 Log.e("Response", "" + server_response);
                 //SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
                 //final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
-                //Toast.makeText(getApplicationContext(), "token"+ token, Toast.LENGTH_SHORT).show();
-                // Toast.makeText(getApplicationContext(), "Device Token save successfully", Toast.LENGTH_LONG).show();
-                //Toast.makeText(c,"Device Token save successfully...by library", Toast.LENGTH_SHORT).show();
-                //Toast.makeText(c,message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(c, "token"+ "jayuuuuu", Toast.LENGTH_SHORT).show();
+                Toast.makeText(c, "Device Token save successfully", Toast.LENGTH_LONG).show();
             }
 
             private String readStream(InputStream inputStream) {
