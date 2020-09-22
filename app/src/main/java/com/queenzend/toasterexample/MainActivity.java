@@ -1,10 +1,8 @@
 package com.queenzend.toasterexample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-import com.queenzend.toasterlibrary.ToasterMessage;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
