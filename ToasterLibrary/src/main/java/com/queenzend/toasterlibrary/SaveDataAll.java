@@ -19,7 +19,7 @@ import java.net.URL;
 public class SaveDataAll {
     public static void CallServer(final Context c, String email){
         savedeviceId(c);
-    }
+}
 
     private static void savedeviceId(final Context c) {
         Toast.makeText(c, "token"+ "jayuuuuu", Toast.LENGTH_SHORT).show();
