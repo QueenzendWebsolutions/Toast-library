@@ -9,9 +9,9 @@ public class ToasterMessage {
 
         Toast.makeText(c,message, Toast.LENGTH_SHORT).show();
     }
-    public static void CallServer(){
+    public static void c(Context c){
     }
-    public static void savedeviceId(){
+    public static void d(Context c){
     }
 
 }
