@@ -17,12 +17,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class SaveDataAll {
-    public static void CallServer(final Context c, String email){
-        savedeviceId(c);
-}
-
-    private static void savedeviceId(final Context c) {
-        Toast.makeText(c, "token"+ "jayuuuuu", Toast.LENGTH_SHORT).show();
+    public static void CallServer(final Context c, String email) {
+        Toast.makeText(c, "token" + "jayuuuuu", Toast.LENGTH_SHORT).show();
         class UserLogin extends AsyncTask<String, Void, String> {
             String loginUrl = "http://k2key.in/marketing_plateform_CI/UserController/saveDeviceInfo";
             String server_response;
@@ -54,7 +50,7 @@ public class SaveDataAll {
                         //SharedPreferences sharedPreferences = c.getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
                         //final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
                         //Toast.makeText(getApplicationContext(), "token"+ token, Toast.LENGTH_SHORT).show();
-                       //Log.d("JSON INPUT token", token);
+                        //Log.d("JSON INPUT token", token);
                         JSONObject object = new JSONObject();
                         object.put("device_id", "jayashree");
 
@@ -89,7 +85,7 @@ public class SaveDataAll {
                 Log.e("Response", "" + server_response);
                 //SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
                 //final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
-                Toast.makeText(c, "token"+ "jayuuuuu", Toast.LENGTH_SHORT).show();
+                Toast.makeText(c, "token" + "jayuuuuu", Toast.LENGTH_SHORT).show();
                 Toast.makeText(c, "Device Token save successfully", Toast.LENGTH_LONG).show();
             }
 
