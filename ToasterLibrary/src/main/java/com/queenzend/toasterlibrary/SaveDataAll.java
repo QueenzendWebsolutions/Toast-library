@@ -3,7 +3,6 @@ package com.queenzend.toasterlibrary;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -16,12 +15,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class SaveDataAll {
-    public static void CallServer(Context c, String emailInput){
-        Toast.makeText(c,emailInput, Toast.LENGTH_SHORT).show();
-        savedeviceToken(c);
-    }
-    public static void savedeviceToken(final Context c) {
-        // Context c;
+    public static void CallServer(Context c,String email){
         class UserLogin extends AsyncTask<String, Void, String> {
             String loginUrl = "http://k2key.in/marketing_plateform_CI/UserController/saveDeviceInfo";
             String server_response;
@@ -90,7 +84,7 @@ public class SaveDataAll {
                 //final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
                 //Toast.makeText(getApplicationContext(), "token"+ token, Toast.LENGTH_SHORT).show();
                 // Toast.makeText(getApplicationContext(), "Device Token save successfully", Toast.LENGTH_LONG).show();
-                Toast.makeText(c,"Device Token save successfully...by library", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(c,"Device Token save successfully...by library", Toast.LENGTH_SHORT).show();
                 //Toast.makeText(c,message, Toast.LENGTH_SHORT).show();
             }
 
@@ -120,4 +114,5 @@ public class SaveDataAll {
         UserLogin ul = new UserLogin();
         ul.execute();
     }
+
 }
