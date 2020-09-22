@@ -1,8 +1,10 @@
 package com.queenzend.toasterlibrary;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -15,17 +17,17 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class SaveDataAll {
-    public static void CallServer(Context c,String email){
+    public static void CallServer(final Context c, String email){
         class UserLogin extends AsyncTask<String, Void, String> {
             String loginUrl = "http://k2key.in/marketing_plateform_CI/UserController/saveDeviceInfo";
             String server_response;
-            //ProgressDialog prgDialog = new ProgressDialog(c);
+            ProgressDialog prgDialog = new ProgressDialog(c);
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                //prgDialog.setMessage("Please wait...");
-                // prgDialog.show();
+                prgDialog.setMessage("Please wait...");
+                 prgDialog.show();
             }
 
             @Override
@@ -39,7 +41,7 @@ public class SaveDataAll {
                     urlConnection.setDoOutput(true);
                     urlConnection.setDoInput(true);
 
-                    //Toast.makeText(getApplicationContext(), "Inside do",Toast.LENGTH_LONG).show();
+                    Toast.makeText(c, "Inside do",Toast.LENGTH_LONG).show();
 
                     OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
 
@@ -78,7 +80,7 @@ public class SaveDataAll {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                // prgDialog.hide();
+                 prgDialog.hide();
                 Log.e("Response", "" + server_response);
                 //SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
                 //final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
