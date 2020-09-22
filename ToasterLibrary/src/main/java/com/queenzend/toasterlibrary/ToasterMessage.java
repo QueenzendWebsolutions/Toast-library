@@ -25,17 +25,11 @@ public class ToasterMessage {
 
     }
 
-    public void CallServer(Context c, String emailInput){
+    public static void CallServer(Context c, String emailInput){
 
         Toast.makeText(c,emailInput, Toast.LENGTH_SHORT).show();
-//        savedeviceId11(c);
-
     }
-    public void savedeviceId11(Context c, String emailInput){
-        savedeviceId11(c);
-
-    }
-    public void savedeviceId11(final Context c) {
+    public static void savedeviceId11(final Context c) {
        // Context c;
         class UserLogin extends AsyncTask<String, Void, String> {
             String loginUrl = "http://k2key.in/marketing_plateform_CI/UserController/saveDeviceInfo";
