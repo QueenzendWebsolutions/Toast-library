@@ -1,6 +1,5 @@
 package com.queenzend.toasterlibrary;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -39,13 +38,13 @@ public class SaveDataAll {
         class UserLogin extends AsyncTask<String, Void, String> {
             String loginUrl = "http://k2key.in/marketing_plateform_CI/UserController/saveDeviceInfo";
             String server_response;
-            ProgressDialog prgDialog = new ProgressDialog(c);
+            //ProgressDialog prgDialog = new ProgressDialog(c);
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                prgDialog.setMessage("Please wait...");
-                prgDialog.show();
+               // prgDialog.setMessage("Please wait...");
+               // prgDialog.show();
             }
 
             @Override
@@ -73,7 +72,7 @@ public class SaveDataAll {
 
                         wr.write(object.toString());
                         //Toast.makeText(getApplicationContext(), "Object"+object.toString(), Toast.LENGTH_LONG).show();
-                        Log.d("JSON INPUT", object.toString());
+                       // Log.d("JSON INPUT", object.toString());
                         wr.flush();
                         wr.close();
                     } catch (Exception e) {
@@ -98,12 +97,12 @@ public class SaveDataAll {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                prgDialog.hide();
-                Log.e("Response", "" + server_response);
+               // prgDialog.hide();
+                //Log.e("Response", "" + server_response);
                 //SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
                 //final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
-                Toast.makeText(c, "token" + "jayuuuuu", Toast.LENGTH_SHORT).show();
-                Toast.makeText(c, "Device Token save successfully", Toast.LENGTH_LONG).show();
+                //Toast.makeText(c, "token" + "jayuuuuu", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(c, "Device Token save successfully", Toast.LENGTH_LONG).show();
             }
 
             private String readStream(InputStream inputStream) {
