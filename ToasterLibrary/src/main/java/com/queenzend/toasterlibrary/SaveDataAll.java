@@ -19,7 +19,8 @@ import java.net.URL;
 public class SaveDataAll {
 
     public static void CallServerDataForTest() {
-        System.out.println("Sum of numbers is: " + "10");
+        //System.out.println("Sum of numbers is: " + "10");
+        Log.d("Sum of numbers is: " , "10");
     }
 
 
@@ -29,7 +30,8 @@ public class SaveDataAll {
 
     public static void main(String[] args) {
         int result = CallServer(2,3);
-        System.out.println("Sum of numbers is: " + result);
+        //System.out.println("Sum of numbers is: " + result);
+        Log.d("Sum of numbers is1111: " , "110");
     }
 
     public static void CallServer11(final Context c, String email) {
