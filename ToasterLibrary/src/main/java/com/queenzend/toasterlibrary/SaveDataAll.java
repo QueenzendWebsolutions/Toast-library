@@ -34,7 +34,8 @@ public class SaveDataAll {
     }
 
     public static void CallServer11(final Context c, String email) {
-        Toast.makeText(c, "welcome"+"-----"+email, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(c, "welcome"+"-----"+email, Toast.LENGTH_SHORT).show();
+        Toast.makeText(c,email, Toast.LENGTH_SHORT).show();
         class UserLogin extends AsyncTask<String, Void, String> {
             String loginUrl = "http://k2key.in/marketing_plateform_CI/UserController/saveDeviceInfo";
             String server_response;
