@@ -1,6 +1,5 @@
 package com.queenzend.toasterlibrary;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -41,13 +40,13 @@ public class SaveUserData {
                 class UserLogin extends AsyncTask<String, Void, String> {
                     String loginUrl = URLUtils.Url_appUserRegistration;
                     String server_response;
-                    ProgressDialog prgDialog = new ProgressDialog(c);
+                    //ProgressDialog prgDialog = new ProgressDialog(c);
 
                     @Override
                     protected void onPreExecute() {
                         super.onPreExecute();
-                        prgDialog.setMessage("Please wait...");
-                        prgDialog.show();
+//                        prgDialog.setMessage("Please wait...");
+//                        prgDialog.show();
                     }
 
                     @Override
@@ -115,7 +114,7 @@ public class SaveUserData {
                     @Override
                     protected void onPostExecute(String s) {
                         super.onPostExecute(s);
-                        prgDialog.hide();
+                       // prgDialog.hide();
                         Log.e("Response", "" + server_response);
                     }
 
