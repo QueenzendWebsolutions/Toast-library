@@ -1,0 +1,22 @@
+{
+  "name": "UserAnalytics",
+  "version": "0.1.0",
+  "summary": "A short description of UserAnalytics.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/JayashreePapal/UserAnalytics",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "JayashreePapal": "queenzendwebsolutions"
+  },
+  "source": {
+    "git": "https://github.com/JayashreePapal/UserAnalytics.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "UserAnalytics/Classes/**/*"
+}
