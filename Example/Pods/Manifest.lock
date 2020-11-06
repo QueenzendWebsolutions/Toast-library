@@ -1,0 +1,16 @@
+PODS:
+  - UserAnalytics (0.1.0)
+
+DEPENDENCIES:
+  - UserAnalytics (from `../`)
+
+EXTERNAL SOURCES:
+  UserAnalytics:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UserAnalytics: 75d9b11b6379e1131bbe3b333b1ad37c80b3dbe6
+
+PODFILE CHECKSUM: a2c988bfae0a39a6c67713b8a5dd0c6a3527b6bd
+
+COCOAPODS: 1.8.4

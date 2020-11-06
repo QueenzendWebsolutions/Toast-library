@@ -1,0 +1,6 @@
+use_frameworks!
+target 'UserAnalytics_Tests' do
+  pod 'UserAnalytics', :path => '../'
+  
+  
+end

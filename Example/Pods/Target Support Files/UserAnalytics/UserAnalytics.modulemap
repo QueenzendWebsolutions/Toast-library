@@ -1,0 +1,6 @@
+framework module UserAnalytics {
+  umbrella header "UserAnalytics-umbrella.h"
+
+  export *
+  module * { export * }
+}
