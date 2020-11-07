@@ -22,7 +22,7 @@ pod 'UserAnalytics'
 
 ## Author
 
-JayashreePapal, queenzendwebsolutions
+JayashreePapal, queenkumar007@gmail.com
 
 ## License
 
