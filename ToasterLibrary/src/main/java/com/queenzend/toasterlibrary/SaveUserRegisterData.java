@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -111,13 +112,38 @@ public class SaveUserData {
 
                     }
 
-                    @Override
-                    protected void onPostExecute(String s) {
-                        super.onPostExecute(s);
-                       // prgDialog.hide();
-                        Log.e("Response", "" + server_response);
-                    }
+//                    @Override
+//                    protected void onPostExecute(String s) {
+//                        super.onPostExecute(s);
+//                       // prgDialog.hide();
+//                        Log.e("Response", "" + server_response);
+//                    }
+@Override
+protected void onPostExecute(String s) {
 
+    super.onPostExecute(s);
+
+    Log.e("Response", "" + server_response);
+    JSONObject jsonObject = null;
+    try {
+        jsonObject = new JSONObject(server_response.toString());
+        if (jsonObject.has("res_code")) {
+            if ((jsonObject.getString("res_code").contains("2"))) {
+
+                Toast.makeText(c, "Registration failed please try again", Toast.LENGTH_LONG).show();
+
+            } else  if ((jsonObject.getString("res_code").contains("1"))) {
+
+                Toast.makeText(c, "Register successfully", Toast.LENGTH_LONG).show();
+            }
+            else {
+                Toast.makeText(c, "Registration failed please try again", Toast.LENGTH_LONG).show();
+            }
+        }
+    } catch (JSONException e) {
+        e.printStackTrace();
+    }
+}
 
                     private String readStream(InputStream inputStream) {
                         BufferedReader reader = null;
