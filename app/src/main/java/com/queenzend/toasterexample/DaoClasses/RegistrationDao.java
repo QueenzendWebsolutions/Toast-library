@@ -2,16 +2,11 @@ package com.queenzend.toasterexample.DaoClasses;
 
 import java.io.Serializable;
 
-/**
- * Created by Ulhas on 11/25/16.
- */
 public class RegistrationDao implements Serializable {
-
 
     String name, contact, mail_id, password;
 
     private static RegistrationDao instance = null;
-   // private static RegistrationDao1 instance1 = null;
     public static RegistrationDao getInstance() {
         if (instance == null) {
             instance = new RegistrationDao();

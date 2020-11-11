@@ -6,11 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void saveDeviceIdforTesting() {
-        //Toast.makeText(c, "welcome"+"-----"+email, Toast.LENGTH_SHORT).show();
-        //Toast.makeText(c,"email", Toast.LENGTH_SHORT).show();
+
         class UserLogin extends AsyncTask<String, Void, String> {
             String loginUrl = "http://k2key.in/marketing_plateform_CI/UserController/saveDeviceInfo";
             String server_response;
@@ -59,15 +55,10 @@ public class MainActivity extends AppCompatActivity {
                     urlConnection.setDoOutput(true);
                     urlConnection.setDoInput(true);
 
-                    //Toast.makeText(getApplicationContext(), "Inside do",Toast.LENGTH_LONG).show();
-
                     OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
 
                     try {
-                        //SharedPreferences sharedPreferences = c.getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
-                        //final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
-                        //Toast.makeText(getApplicationContext(), "token"+ token, Toast.LENGTH_SHORT).show();
-                        //Log.d("JSON INPUT token", token);
+
                         JSONObject object = new JSONObject();
                         object.put("device_id", "jayashree");
 
@@ -86,11 +77,9 @@ public class MainActivity extends AppCompatActivity {
                     int responseCode = urlConnection.getResponseCode();
                     if (responseCode == HttpURLConnection.HTTP_OK) {
                         server_response = readStream(urlConnection.getInputStream());
-                        // Toast.makeText(getApplicationContext(), "server_response"+server_response, Toast.LENGTH_LONG).show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    //Toast.makeText(getApplicationContext(), "Error 2:"+e.toString(), Toast.LENGTH_LONG).show();
                 }
                 return null;
             }
@@ -99,11 +88,7 @@ public class MainActivity extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                  prgDialog.hide();
-                //Log.e("Response", "" + server_response);
-                //SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
-                //final String token = sharedPreferences.getString(getString(R.string.FCM_TOKEN), "");
-                //Toast.makeText(c, "token" + "jayuuuuu", Toast.LENGTH_SHORT).show();
-                // Toast.makeText(c, "Device Token save successfully", Toast.LENGTH_LONG).show();
+
             }
 
             private String readStream(InputStream inputStream) {

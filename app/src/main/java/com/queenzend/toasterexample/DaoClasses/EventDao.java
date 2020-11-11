@@ -1,15 +1,10 @@
 package com.queenzend.toasterexample.DaoClasses;
-
 import java.io.Serializable;
 
-/**
- * Created by my pc on 22-12-2016.
- */
 public class EventDao implements Serializable {
     String title, location,start_date,end_date;
 
     private static EventDao instance = null;
-    // private static RegistrationDao1 instance1 = null;
     public static EventDao getInstance() {
         if (instance == null) {
             instance = new EventDao();

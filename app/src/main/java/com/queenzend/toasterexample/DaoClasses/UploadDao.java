@@ -1,8 +1,5 @@
 package com.queenzend.toasterexample.DaoClasses;
 
-/**
- * Created by dell on 12/6/2016.
- */
 public class UploadDao {
 
     String id, image_url;
@@ -16,7 +13,6 @@ public class UploadDao {
         }
         return instance;
     }
-
 
     public String getId() {
         return id;
@@ -38,10 +34,6 @@ public class UploadDao {
         return image;
     }
 
-
-    // public void setStringImage(String image) {
-       // this.image = image;
-    //}
 }
 
 

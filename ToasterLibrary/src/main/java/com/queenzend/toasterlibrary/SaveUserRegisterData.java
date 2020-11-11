@@ -16,17 +16,17 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class SaveUserData {
-    public static void SaveUserAnalyticsData(final Context c,final String token, final String name,
-                                             final String email,final String phone,final String emergency,
+public class SaveUserRegisterData {
+    public static void SaveUserRegisterData(final Context c,final String token, final String name,
+                                             final String email,final String phone,
                                              final String jobtype,final String gender,final String city,
                                              final String country,final String dob,final String address,
-                                             final String LATITUDE_VALUE,final String LONGITUDE_VALUE ,final String password) {
+                                             final String LATITUDE_VALUE,final String LONGITUDE_VALUE ,final String password,
+                                             final String source,final String company_token) {
 
         Log.e("Name==", String.valueOf(name));
         Log.e("Email==", String.valueOf(email));
         Log.e("Phone==", String.valueOf(phone));
-        Log.e("Emergency contact==", String.valueOf(emergency));
         Log.e("JobType==", String.valueOf(jobtype));
         // Log.e("Gender==", String.valueOf(radioSexButton.getText()));
         Log.e("Gender==", String.valueOf(gender));
@@ -37,17 +37,15 @@ public class SaveUserData {
         Log.e("LATITUDE_VALUE", String.valueOf(LATITUDE_VALUE));
         Log.e("LONGITUDE_VALUE", String.valueOf(LONGITUDE_VALUE));
         Log.d("FCM_TOKEN: ", token);
+        Log.d("source: ", source);
+        Log.d("company_token: ", company_token);
 
                 class UserLogin extends AsyncTask<String, Void, String> {
                     String loginUrl = URLUtils.Url_appUserRegistration;
                     String server_response;
-                    //ProgressDialog prgDialog = new ProgressDialog(c);
-
                     @Override
                     protected void onPreExecute() {
                         super.onPreExecute();
-//                        prgDialog.setMessage("Please wait...");
-//                        prgDialog.show();
                     }
 
                     @Override
@@ -64,24 +62,21 @@ public class SaveUserData {
 
                             try {
                                 JSONObject object = new JSONObject();
-                                //object.put("email", email);
-                                // object.put("password", password);
-                                object.put("device_id", token);
-                                object.put("userName", name);
+                                object.put("device_token", token);
+                                object.put("user_name", name);
                                 object.put("email", email);
-                                object.put("mobile", phone);
-                                object.put("emergencyContact", emergency);
-                                object.put("jobType", jobtype);
+                                object.put("phone_number", phone);
+                                object.put("job_type", jobtype);
                                 object.put("city", city);
                                 object.put("country", country);
                                 object.put("latitude", LATITUDE_VALUE);
                                 object.put("longitude", LONGITUDE_VALUE);
-                                object.put("source", "android");
+                                object.put("source", source);
                                 object.put("dob", dob);
                                 object.put("address", address);
                                 object.put("gender", gender);
                                 object.put("password", password);
-
+                                object.put("company_token", company_token);
                                 wr.write(object.toString());
 
                                 //Log.e("JSON INPUT", object.toString());
@@ -117,6 +112,7 @@ public class SaveUserData {
 //                        super.onPostExecute(s);
 //                       // prgDialog.hide();
 //                        Log.e("Response", "" + server_response);
+//
 //                    }
 @Override
 protected void onPostExecute(String s) {
@@ -136,15 +132,25 @@ protected void onPostExecute(String s) {
 
                 Toast.makeText(c, "Register successfully", Toast.LENGTH_LONG).show();
             }
-            else {
-                Toast.makeText(c, "Registration failed please try again", Toast.LENGTH_LONG).show();
+            else if ((jsonObject.getString("res_code").contains("3"))) {
+
+                Toast.makeText(c, "Data is null", Toast.LENGTH_LONG).show();
+                System.out.println("Invalid Login");
+
             }
+            else if ((jsonObject.getString("res_code").contains("4"))) {
+
+                Toast.makeText(c, "Company not found", Toast.LENGTH_LONG).show();
+                System.out.println("Company not found");
+
+            }
+            else {
+                Toast.makeText(c, "Registration failed please try again", Toast.LENGTH_LONG).show();            }
         }
     } catch (JSONException e) {
         e.printStackTrace();
     }
 }
-
                     private String readStream(InputStream inputStream) {
                         BufferedReader reader = null;
                         StringBuffer response = new StringBuffer();
