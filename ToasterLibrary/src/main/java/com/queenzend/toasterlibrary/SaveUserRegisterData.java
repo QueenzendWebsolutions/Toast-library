@@ -66,7 +66,8 @@ public class SaveUserRegisterData {
                                 object.put("user_name", name);
                                 object.put("email", email);
                                 object.put("phone_number", phone);
-                                object.put("job_type", jobtype);
+//                                object.put("job_type", jobtype);
+                                object.put("jobType", jobtype);
                                 object.put("city", city);
                                 object.put("country", country);
                                 object.put("latitude", LATITUDE_VALUE);

@@ -52,7 +52,8 @@ public class SaveLoginData {
 
                         object.put("email", email);
                         object.put("password", password);
-                        object.put("device_token", token );
+                        //object.put("device_token", token );
+                        object.put("device_id", token );
                         object.put("source", source);
                         object.put("company_token", company_token);
 
