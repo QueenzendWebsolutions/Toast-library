@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/IOSSWIFTBOTHCODE/IOSFirstPlugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Jayashree/StookITMAINAPP" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/NATIVEANDROID/MarketingPlatformAnalyticsPlugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/NATIVEANDROID/Toast-library" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/VedicFamilyApp" vcs="Git" />
+  </component>
+</project>
