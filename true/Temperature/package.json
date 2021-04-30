@@ -1,0 +1,14 @@
+{
+  "name": "com-droidada-plugins-temperature",
+  "version": "0.0.1",
+  "description": "",
+  "cordova": {
+    "id": "com-droidada-plugins-temperature",
+    "platforms": []
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "",
+  "license": "ISC"
+}
